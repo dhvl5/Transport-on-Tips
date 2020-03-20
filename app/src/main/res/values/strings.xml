@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">TransportOnTips</string>
+    <string name="Des">Choose Destination</string>
+    <string name="Src">Choose Source</string>
+
+    <string name="person_description">A_B_C</string>
+    <string name="person_name">ABC</string>
+    <string name="person_email">abc@email.com</string>
+    <string name="navigation_item_1">Generate Pass</string>
+    <string name="navigation_item_2">Feedback</string>
+    <string name="navigation_item_3">Account Settings</string>
+    <string name="navigation_item_4">About Us</string>
+    <string name="navigation_item_5">Logout</string>
+    <string name="open_drawer">Open Navigation Drawer</string>
+    <string name="close_drawer">Close Navigation Drawer</string>
+
+    <string-array name="Src_Des">
+        <item>Maninagar</item>
+        <item>Shivranjani</item>
+        <item>Nehrunagar</item>
+        <item>L.D College</item>
+        <item>Andhjan Mandal</item>
+        <item>Iskcon</item>
+
+    </string-array>
+
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+</resources>
+

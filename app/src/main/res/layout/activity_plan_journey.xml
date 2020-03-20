@@ -1,0 +1,2363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Createacc"
+    android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbar"
+        android:background="@drawable/cust_abar"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/raleway_bold"
+        android:text="SELECT YOUR JOURNEY"
+        android:textSize="25sp"
+        android:id="@+id/select"
+
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/select"
+        android:orientation="horizontal"
+        android:id="@+id/ll">
+    <Spinner
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:id="@+id/Src"
+        android:entries="@array/Src_Des"
+        android:prompt="@string/Src"
+
+
+        android:background="@drawable/spinner"
+        android:layout_marginLeft="10dp"
+        />
+    <Spinner
+        android:layout_width="190dp"
+        android:layout_height="50dp"
+        android:id="@+id/des"
+        android:entries="@array/Src_Des"
+        android:prompt="@string/Des"
+
+
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/spinner"
+        />
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp">'
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/c1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="3:57 pm  4:39 pm"
+            android:textSize="15sp"
+            android:id="@+id/select15"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorPrimaryDark"
+            />
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_walk"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+
+            />
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_arrow"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="50dp"
+
+            />
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_bus"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="80dp"
+
+            />
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_arrow"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="110dp"
+
+            />
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_walk"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="140dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/raleway_bold"
+            android:text="Fare : Rs. 12"
+            android:textSize="15sp"
+            android:id="@+id/select16"
+            android:layout_marginTop="100dp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+    </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/c1"
+                android:id="@+id/c2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select18"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select17"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c2"
+                android:id="@+id/c3"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select19"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select20"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c3"
+                android:id="@+id/c4"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select21"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select22"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c4"
+                android:id="@+id/c5"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select23"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select24"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c5"
+                android:id="@+id/c6"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select25"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select26"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c6"
+                android:id="@+id/c7"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select27"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select28"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c7"
+                android:id="@+id/c8"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select29"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select30"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c8"
+                android:id="@+id/c9"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select31"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select32"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:id="@+id/c10"
+                android:layout_below="@+id/c9"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select33"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select34"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c10"
+                android:id="@+id/c11"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select35"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select36"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c11"
+                android:id="@+id/c12"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select37"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select38"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c12"
+                android:id="@+id/c13"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select39"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select40"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c13"
+                android:id="@+id/c14">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select41"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select42"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c14"
+                android:id="@+id/c15"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select43"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select44"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c15"
+                android:id="@+id/c16"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select45"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select46"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c16"
+                android:id="@+id/c17"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select47"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select48"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c17"
+                android:id="@+id/c18"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select49"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select50"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c18"
+                android:id="@+id/c19"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select51"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select52"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c19"
+                android:id="@+id/c20"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select53"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select54"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c20"
+                android:id="@+id/c21"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select55"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select56"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c21"
+                android:id="@+id/c22"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select57"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select58"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c22"
+                android:id="@+id/c23"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select59"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select60"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c23"
+                android:id="@+id/c24"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select61"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select62"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c24"
+                android:id="@+id/c25"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select63"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select64"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c25"
+                android:id="@+id/c26"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select65"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select66"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c26"
+                android:id="@+id/c27"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select67"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select68"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c27"
+                android:id="@+id/c28"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select69"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select70"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+            </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_marginTop="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/c28"
+                    android:id="@+id/c29"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:fontFamily="@font/raleway_bold"
+                        android:text="3:57 pm  4:39 pm"
+                        android:textSize="15sp"
+                        android:id="@+id/select71"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        />
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_walk"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginLeft="20dp"
+
+                        />
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_arrow"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginLeft="50dp"
+
+                        />
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_bus"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginLeft="80dp"
+
+                        />
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_arrow"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginLeft="110dp"
+
+                        />
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_walk"
+                        android:layout_marginTop="60dp"
+                        android:layout_marginLeft="140dp"
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:fontFamily="@font/raleway_bold"
+                        android:text="Fare : Rs. 12"
+                        android:textSize="15sp"
+                        android:id="@+id/select72"
+                        android:layout_marginTop="100dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        />
+
+
+
+
+                </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@+id/c29"
+                android:id="@+id/c30"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="3:57 pm  4:39 pm"
+                    android:textSize="15sp"
+                    android:id="@+id/select73"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="20dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="50dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_bus"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="80dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_arrow"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="110dp"
+
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_walk"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginLeft="140dp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/raleway_bold"
+                    android:text="Fare : Rs. 12"
+                    android:textSize="15sp"
+                    android:id="@+id/select74"
+                    android:layout_marginTop="100dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+            </androidx.cardview.widget.CardView>
+
+
+            <Button
+                android:layout_below="@+id/c30"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="Generate QR code for a ticket"
+                android:background="@drawable/custom_btn1"
+                android:textColor="#ffffff"
+                android:layout_centerHorizontal="true"/>
+
+
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

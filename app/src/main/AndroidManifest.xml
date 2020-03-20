@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.project">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".regotp"></activity>
+        <activity android:name=".mycard" />
+        <activity android:name=".ticketqr" />
+
+        <activity android:name=".aboutus" />
+        <activity android:name=".activity_journeywologin" />
+        <activity android:name=".newpass" />
+        <activity android:name=".otpsend" />
+        <activity android:name=".feedback" />
+        <activity android:name=".successfulfeed" />
+        <activity android:name=".successfulpass" />
+        <activity android:name=".accountsett" />
+        <activity android:name=".Successfullticket"/>
+        <activity android:name=".Forgotpass" />
+        <activity android:name=".splashscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Successfull" />
+        <activity android:name=".picadded" />
+        <activity android:name=".Addpic" />
+        <activity android:name=".PlanJourney" />
+        <activity android:name=".Generate_Pass" />
+        <activity android:name=".Almostthere" />
+        <activity android:name=".Accountreg" />
+        <activity android:name=".Login" />
+        <activity android:name=".Verifyotp" />
+        <activity android:name=".Createacc" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

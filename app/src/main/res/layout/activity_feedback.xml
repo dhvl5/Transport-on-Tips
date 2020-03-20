@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feedback">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/raleway_bold"
+        android:gravity="center"
+        android:text="FeedBack"
+        android:textColor="#000000"
+        android:textSize="30sp"
+        android:id="@+id/label"/>
+    <TextView
+        android:id="@+id/label1"
+        android:layout_marginLeft="55dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/raleway_bold"
+        android:text="Want to Describe what happened ?"
+        android:textSize="15sp"
+        android:layout_marginTop="70dp"
+        android:textColor="#000000"
+        android:layout_below="@+id/label"
+        />
+
+    <EditText
+        android:id="@+id/edtFullname"
+        android:layout_below="@+id/label1"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:gravity="top|left"
+        android:overScrollMode="always"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:lines="6"
+        android:background="@drawable/custom_et1"
+        android:fontFamily="@font/raleway_bold"
+        android:hint="What's your Feedback?" />
+    <Button
+        android:id="@+id/nxtBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="570dp"
+        android:background="@drawable/custom_btn1"
+        android:fontFamily="@font/raleway_bold"
+        android:onClick="Nextbutton"
+        android:text="SUBMIT"
+        android:textColor="#ffffff" />
+</RelativeLayout>

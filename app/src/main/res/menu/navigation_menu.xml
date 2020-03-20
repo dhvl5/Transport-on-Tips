@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:title="Home"
+            android:id="@+id/nav_item_7"
+            android:icon="@drawable/home_white"
+            />
+        <item
+            android:title="Generate Pass"
+            android:id="@+id/nav_item_1"
+            android:icon="@drawable/photo_icon"/>
+        <item
+            android:title="My Card"
+            android:id="@+id/nav_item_2"
+            android:icon="@drawable/mycard_icon"/>
+        <item
+            android:title="My Profile"
+            android:id="@+id/nav_item_3"
+            android:icon="@drawable/contact_icon"/>
+        <item
+            android:title="Feedback"
+            android:id="@+id/nav_item_4"
+            android:icon="@drawable/sent_icon"/>
+        <item
+        android:title="About Us"
+        android:id="@+id/nav_item_5"
+        android:icon="@drawable/cart_icon"/>
+        <item
+            android:title="Logout"
+            android:id="@+id/nav_item_6"
+            android:icon="@drawable/information_icon"
+            />
+
+    </group>
+
+
+</menu>
