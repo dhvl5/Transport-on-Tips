@@ -23,7 +23,6 @@
         android:text="SELECT YOUR JOURNEY"
         android:textSize="25sp"
         android:id="@+id/select"
-
         android:textColor="@color/colorPrimaryDark"/>
 
     <LinearLayout
@@ -34,31 +33,28 @@
         android:layout_below="@+id/select"
         android:orientation="horizontal"
         android:id="@+id/ll">
+
     <Spinner
         android:layout_width="190dp"
         android:layout_height="50dp"
         android:id="@+id/Src"
         android:entries="@array/Src_Des"
         android:prompt="@string/Src"
-
-
         android:background="@drawable/spinner"
-        android:layout_marginLeft="10dp"
-        />
+        android:layout_marginLeft="10dp" />
+
     <Spinner
         android:layout_width="190dp"
         android:layout_height="50dp"
         android:id="@+id/des"
         android:entries="@array/Src_Des"
         android:prompt="@string/Des"
-
-
         android:layout_marginLeft="10dp"
-        android:background="@drawable/spinner"
-        />
+        android:background="@drawable/spinner" />
 
     </LinearLayout>
-    <ScrollView
+
+    <!--<ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="200dp">'
@@ -2336,28 +2332,18 @@
                     />
             </androidx.cardview.widget.CardView>
 
-
-            <Button
-                android:layout_below="@+id/c30"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="Generate QR code for a ticket"
-                android:background="@drawable/custom_btn1"
-                android:textColor="#ffffff"
-                android:layout_centerHorizontal="true"/>
-
-
-
-
-
-
-
-
-
-
         </RelativeLayout>
 
-    </ScrollView>
+    </ScrollView>-->
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="660dp"
+        android:text="Generate QR code for a ticket"
+        android:background="@drawable/custom_btn1"
+        android:textColor="#ffffff"
+        android:onClick="success"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

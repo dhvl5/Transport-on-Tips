@@ -19,6 +19,7 @@
         android:id="@+id/t1"
         />
     <ImageView
+        android:id="@+id/imageClick"
         android:layout_width="100dp"
         android:layout_height="150dp"
         android:src="@drawable/person1"

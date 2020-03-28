@@ -30,7 +30,7 @@
         />
 
     <EditText
-        android:id="@+id/edtFullname"
+        android:id="@+id/edtFeedback"
         android:layout_below="@+id/label1"
         android:layout_width="300dp"
         android:layout_height="150dp"

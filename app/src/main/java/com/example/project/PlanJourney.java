@@ -8,12 +8,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
+
+import java.io.ByteArrayOutputStream;
 
 public class PlanJourney extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
@@ -21,11 +27,16 @@ public class PlanJourney extends AppCompatActivity implements NavigationView.OnN
     DrawerLayout drawerLayout;
     NavigationView navigationView;
 
+    Spinner sourceSpinner, destinationSpinner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.navigation_drawer);
+
+        sourceSpinner = findViewById(R.id.Src);
+        destinationSpinner = findViewById(R.id.des);
 
         materialToolbar = findViewById(R.id.toolbar);
         setSupportActionBar(materialToolbar);
@@ -80,9 +91,27 @@ public class PlanJourney extends AppCompatActivity implements NavigationView.OnN
         }
         return false;
     }
+
     public void success(View view)
     {
-        Intent intent = new Intent(getApplicationContext(), ticketqr.class);
-        startActivity(intent);
+        String src = sourceSpinner.getSelectedItem().toString();
+        String des = destinationSpinner.getSelectedItem().toString();
+        byte[] bytes;
+
+        if(src.equals("Maninagar") && des.equals("Maninagar"))
+        {
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.maninagar_shivranjani);
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+            bytes = stream.toByteArray();
+            Toast.makeText(getApplicationContext(), src + "\n" + des, Toast.LENGTH_SHORT).show();
+        }
+        else if(src.equals("Maninagar") && des.equals("Iskcon"))
+        {
+            Toast.makeText(getApplicationContext(), src + "\n" + des, Toast.LENGTH_SHORT).show();
+        }
+
+        /*Intent intent = new Intent(getApplicationContext(), ticketqr.class);
+        startActivity(intent);*/
     }
 }
