@@ -47,6 +47,15 @@ public class PlanJourney extends AppCompatActivity implements NavigationView.OnN
         drawerLayout = findViewById(R.id.custom_drawer_layout);
         navigationView = findViewById(R.id.custom_navigation_view);
 
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("MenuItemVisibility", Context.MODE_PRIVATE);
+        if(sharedPreferences.contains("visible"))
+        {
+            navigationView.getMenu().findItem(R.id.nav_item_1).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_item_2).setVisible(true);
+        }
+        else
+            navigationView.getMenu().findItem(R.id.nav_item_2).setVisible(false);
+
         ActionBarDrawerToggle drawerToggle;
         drawerToggle = new ActionBarDrawerToggle(this,drawerLayout,materialToolbar,R.string.open_drawer,R.string.close_drawer);
         drawerLayout.addDrawerListener(drawerToggle);
@@ -59,28 +68,38 @@ public class PlanJourney extends AppCompatActivity implements NavigationView.OnN
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        switch (id){
+        switch (id)
+        {
+            case R.id.nav_item_7:
+                drawerLayout.closeDrawer(navigationView);
+                break;
             case R.id.nav_item_1:
+                drawerLayout.closeDrawer(navigationView);
                 Intent i1 = new Intent(PlanJourney.this, Generate_Pass.class);
                 startActivity(i1);
                 break;
             case R.id.nav_item_2:
+                drawerLayout.closeDrawer(navigationView);
                 Intent i2 = new Intent(PlanJourney.this, mycard.class);
                 startActivity(i2);
                 break;
             case R.id.nav_item_3:
+                drawerLayout.closeDrawer(navigationView);
                 Intent i3 = new Intent(PlanJourney.this, accountsett.class);
                 startActivity(i3);
                 break;
             case R.id.nav_item_4:
+                drawerLayout.closeDrawer(navigationView);
                 Intent i4 = new Intent(PlanJourney.this, feedback.class);
                 startActivity(i4);
                 break;
             case R.id.nav_item_5:
+                drawerLayout.closeDrawer(navigationView);
                 Intent i5 = new Intent(PlanJourney.this, aboutus.class);
                 startActivity(i5);
                 break;
             case R.id.nav_item_6:
+                drawerLayout.closeDrawer(navigationView);
                 SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("UserLogin",
                         Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();

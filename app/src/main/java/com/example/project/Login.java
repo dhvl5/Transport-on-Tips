@@ -34,8 +34,7 @@ public class Login extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("UserLogin",
-                Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("UserLogin", Context.MODE_PRIVATE);
         if(sharedPreferences.contains("login"))
         {
             startActivity(new Intent(Login.this, PlanJourney.class));

@@ -33,6 +33,7 @@ public class Createacc extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acc_create);
+
         name=findViewById(R.id.edtFullname);
         email = findViewById(R.id.edtEmail);
         mobile_number = findViewById(R.id.edtMobileNumber);
@@ -86,6 +87,7 @@ public class Createacc extends AppCompatActivity
             name.requestFocus();
             return;
         }
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>()
         {
             @Override

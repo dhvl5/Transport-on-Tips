@@ -136,6 +136,7 @@
             android:src="@drawable/seven"
             android:layout_marginTop="270dp"
             android:layout_marginLeft="260dp"/>
+
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

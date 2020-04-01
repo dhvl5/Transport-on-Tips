@@ -43,13 +43,6 @@
         android:fontFamily="@font/raleway_bold"
         android:hint="E-mail" />
 
-
-
-
-
-
-
-
     <TextView
         android:id="@+id/edtCode"
         android:layout_width="50dp"
@@ -98,8 +91,8 @@
         android:id="@+id/add"
 
         />
-    <EditText
 
+    <EditText
         android:id="@+id/Aadhar_num"
         android:layout_marginTop="20dp"
         android:layout_width="300dp"
@@ -122,7 +115,6 @@
         android:layout_marginLeft="50dp"
         android:layout_below="@+id/Aadhar_num"
         />
-
 
     <RadioGroup
         android:layout_width="wrap_content"
