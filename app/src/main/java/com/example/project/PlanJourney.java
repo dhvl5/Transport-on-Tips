@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +17,7 @@ import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +26,7 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.navigation.NavigationView;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 
 public class PlanJourney extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
@@ -32,6 +36,11 @@ public class PlanJourney extends AppCompatActivity implements NavigationView.OnN
 
     Spinner sourceSpinner, destinationSpinner;
 
+    RecyclerView recyclerView;
+    BusCardAdapter busCardAdapter;
+    ArrayList<BusCard> busCardList;
+    ArrayList<BusCard> busCardFilteredList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -40,12 +49,128 @@ public class PlanJourney extends AppCompatActivity implements NavigationView.OnN
 
         sourceSpinner = findViewById(R.id.Src);
         destinationSpinner = findViewById(R.id.des);
-
+        recyclerView = findViewById(R.id.rv);
         materialToolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(materialToolbar);
-
         drawerLayout = findViewById(R.id.custom_drawer_layout);
         navigationView = findViewById(R.id.custom_navigation_view);
+
+        setSupportActionBar(materialToolbar);
+
+        busCardList = new ArrayList<>();
+        busCardAdapter = new BusCardAdapter(this, busCardList);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(busCardAdapter);
+
+        busCardList.add(new BusCard("Maninagar - Shivranjani", "Fare : Rs. 15", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Maninagar - Nehrunagar", "Fare : Rs. 15", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Maninagar - L.D. College", "Fare : Rs. 15", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Maninagar - Andhjan Mandal", "Fare : Rs. 20", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Maninagar - Iskcon", "Fare : Rs. 20", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Shivranjani - Maninagar", "Fare : Rs. 20", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Shivranjani - Nehrunagar", "Fare : Rs. 4", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Shivranjani - L.D. College", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Shivranjani - Andhjan Mandal", "Fare : Rs. 4", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Shivranjani - Iskcon", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Nehrunagar - Maninagar", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Nehrunagar - Shivranjani", "Fare : Rs. 4", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Nehrunagar - L.D. College", "Fare : Rs. 7", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Nehrunagar - Andhjan Mandal", "Fare : Rs. 7", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Nehrunagar - Iskcon", "Fare : Rs. 10", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("L.D. College - Maninagar", "Fare : Rs. 15", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("L.D. College - Shivranjani", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("L.D. College - Nehrunagar", "Fare : Rs. 7", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("L.D. College - Andhjan Mandal", "Fare : Rs. 10", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("L.D. College - Iskcon", "Fare : Rs. 13", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Andhjan Mandal - Maninagar", "Fare : Rs. 20", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Andhjan Mandal - Shivranjani", "Fare : Rs. 4", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Andhjan Mandal - Nehrunagar", "Fare : Rs. 7", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Andhjan Mandal - L.D. College", "Fare : Rs. 10", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Andhjan Mandal - Iskcon", "Fare : Rs. 10", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Iskcon - Maninagar", "Fare : Rs. 22", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Iskcon - Nehrunagar", "Fare : Rs. 10", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Iskcon - Shivranjani", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Iskcon - L.D. College", "Fare : Rs. 10", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Iskcon - Andhjan Mandal", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Maninagar - Shivranjani", "Fare : Rs. 15", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Maninagar - Nehrunagar", "Fare : Rs. 15", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Maninagar - L.D. College", "Fare : Rs. 15", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Maninagar - Andhjan Mandal", "Fare : Rs. 20", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Maninagar - Iskcon", "Fare : Rs. 20", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Shivranjani - Maninagar", "Fare : Rs. 15", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Shivranjani - Nehrunagar", "Fare : Rs. 4", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Shivranjani - L.D. College", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Shivranjani - Andhjan Mandal", "Fare : Rs. 4", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Shivranjani - Iskcon", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Nehrunagar - Maninagar", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Nehrunagar - Shivranjani", "Fare : Rs. 4", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Nehrunagar - L.D. College", "Fare : Rs. 7", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Nehrunagar - Andhjan Mandal", "Fare : Rs. 7", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Nehrunagar - Iskcon", "Fare : Rs. 10", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("L.D. College - Maninagar", "Fare : Rs. 15", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("L.D. College - Shivranjani", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("L.D. College - Nehrunagar", "Fare : Rs. 7", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("L.D. College - Andhjan Mandal", "Fare : Rs. 10", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("L.D. College - Iskcon", "Fare : Rs. 13", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Andhjan Mandal - Maninagar", "Fare : Rs. 20", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Andhjan Mandal - Shivranjani", "Fare : Rs. 4", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Andhjan Mandal - Nehrunagar", "Fare : Rs. 7", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Andhjan Mandal - L.D. College", "Fare : Rs. 10", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Andhjan Mandal - Iskcon", "Fare : Rs. 10", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Iskcon - Maninagar", "Fare : Rs. 22", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Iskcon - Shivranjani", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Iskcon - Nehrunagar", "Fare : Rs. 10", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Iskcon - Andhjan Mandal", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Iskcon - L.D. College", "Fare : Rs. 10", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Maninagar - L.D. College", "Fare : Rs. 15", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Maninagar - Iskcon", "Fare : Rs. 20", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Shivranjani - Nehrunagar", "Fare : Rs. 4", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Shivranjani - Andhjan Mandal", "Fare : Rs. 4", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Shivranjani - Maninagar", "Fare : Rs. 15", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Maninagar - Shivranjani", "Fare : Rs. 15", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Nehrunagar - Shivranjani", "Fare : Rs. 4", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Nehrunagar - Maninagar", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Nehrunagar - L.D. College", "Fare : Rs. 7", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("L.D. College - Iskcon", "Fare : Rs. 13", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("L.D. College - Maninagar", "Fare : Rs. 15", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("L.D. College - Shivranjani", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Andhjan Mandal - Nehrunagar", "Fare : Rs. 7", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Andhjan Mandal - Iskcon", "Fare : Rs. 10", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Andhjan Mandal - Shivranjani", "Fare : Rs. 10", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Iskcon - Maninagar", "Fare : Rs. 22", "3:57 pm - 4:39 pm"));
+        busCardList.add(new BusCard("Iskcon - Shivranjani", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
+        busCardAdapter.notifyDataSetChanged();
+
+        sourceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String src = sourceSpinner.getSelectedItem().toString();
+                String des = destinationSpinner.getSelectedItem().toString();
+                ShowToast(src);
+                if(src.equals("Maninagar") && des.equals("Maninagar"))
+                    busCardFilteredList = busCardList;
+                if(src.equals("Andhjan Mandal"))
+                {
+                    ShowToast("Worked");
+                    ArrayList<BusCard> filteredList = new ArrayList<>();
+                    for (BusCard temp : busCardList)
+                    {
+                        if(temp.getRoute().contains("Maninagar - Andhjan Mandal"))
+                        {
+                            filteredList.add(temp);
+                        }
+                    }
+                    busCardList = filteredList;
+                    busCardAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("MenuItemVisibility", Context.MODE_PRIVATE);
         if(sharedPreferences.contains("visible"))
