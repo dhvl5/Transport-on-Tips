@@ -39,7 +39,6 @@ public class PlanJourney extends AppCompatActivity implements NavigationView.OnN
     RecyclerView recyclerView;
     BusCardAdapter busCardAdapter;
     ArrayList<BusCard> busCardList;
-    ArrayList<BusCard> busCardFilteredList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -142,34 +141,26 @@ public class PlanJourney extends AppCompatActivity implements NavigationView.OnN
         busCardList.add(new BusCard("Iskcon - Shivranjani", "Fare : Rs. 9", "3:57 pm - 4:39 pm"));
         busCardAdapter.notifyDataSetChanged();
 
-        sourceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        sourceSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String src = sourceSpinner.getSelectedItem().toString();
-                String des = destinationSpinner.getSelectedItem().toString();
-                ShowToast(src);
-                if(src.equals("Maninagar") && des.equals("Maninagar"))
-                    busCardFilteredList = busCardList;
-                if(src.equals("Andhjan Mandal"))
-                {
-                    ShowToast("Worked");
-                    ArrayList<BusCard> filteredList = new ArrayList<>();
-                    for (BusCard temp : busCardList)
-                    {
-                        if(temp.getRoute().contains("Maninagar - Andhjan Mandal"))
-                        {
-                            filteredList.add(temp);
-                        }
-                    }
-                    busCardList = filteredList;
-                    busCardAdapter.notifyDataSetChanged();
-                }
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                FilterList();
             }
-
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+            public void onNothingSelected(AdapterView<?> parent) { }
+        });
 
+        destinationSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
+        {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {
+                FilterList();
             }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) { }
         });
 
         SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("MenuItemVisibility", Context.MODE_PRIVATE);
@@ -243,278 +234,126 @@ public class PlanJourney extends AppCompatActivity implements NavigationView.OnN
     {
         String src = sourceSpinner.getSelectedItem().toString();
         String des = destinationSpinner.getSelectedItem().toString();
-        byte[] bytes;
-        Intent intent = new Intent(getApplicationContext(), ticketqr.class);
 
         if(src.equals("Maninagar") && des.equals("Shivranjani"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.maninagar_shivranjani);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.maninagar_shivranjani);
         }
         else if(src.equals("Maninagar") && des.equals("Nehrunagar"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.maninagar_nehrunagar);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.maninagar_nehrunagar);
         }
         else if(src.equals("Maninagar") && des.equals("L.D College"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.maninagar_ld);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.maninagar_ld);
         }
         else if(src.equals("Maninagar") && des.equals("Andhjan Mandal"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.maninagar_andhjan);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.maninagar_andhjan);
         }
         else if(src.equals("Maninagar") && des.equals("Iskcon"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.maninagar_iscon);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.maninagar_iscon);
         }
         else if(src.equals("Shivranjani") && des.equals("Maninagar"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.shivranjani_maninagar);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.shivranjani_maninagar);
         }
         else if(src.equals("Shivranjani") && des.equals("Nehrunagar"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.shivranjani_nehrunagar);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.shivranjani_nehrunagar);
         }
         else if(src.equals("Shivranjani") && des.equals("L.D College"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.shivranjani_ld);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.shivranjani_ld);
         }
         else if(src.equals("Shivranjani") && des.equals("Andhjan Mandal"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.shivranjani_andhjan);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.shivranjani_andhjan);
         }
         else if(src.equals("Shivranjani") && des.equals("Iskcon"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.shivranjani_iscon);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.shivranjani_iscon);
         }
         else if(src.equals("Nehrunagar") && des.equals("Maninagar"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.nehrunagar_maninagar);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.nehrunagar_maninagar);
         }
         else if(src.equals("Nehrunagar") && des.equals("Shivranjani"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.nehrunagar_shivranjani);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.nehrunagar_shivranjani);
         }
         else if(src.equals("Nehrunagar") && des.equals("L.D College"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.nehrunagar_ld);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.nehrunagar_ld);
         }
         else if(src.equals("Nehrunagar") && des.equals("Andhjan Mandal"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.nehrunagar_andhjan);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.nehrunagar_andhjan);
         }
         else if(src.equals("Nehrunagar") && des.equals("Iskcon"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.nehrunagar_iscon);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.nehrunagar_iscon);
         }
         else if(src.equals("L.D College") && des.equals("Maninagar"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ld_maninagar);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.ld_maninagar);
         }
         else if(src.equals("L.D College") && des.equals("Shivranjani"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ld_shivranjani);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.ld_shivranjani);
         }
         else if(src.equals("L.D College") && des.equals("Nehrunagar"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ld_nehrunagar);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.ld_nehrunagar);
         }
         else if(src.equals("L.D College") && des.equals("Andhjan Mandal"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ld_andhjan);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.ld_andhjan);
         }
         else if(src.equals("L.D College") && des.equals("Iskcon"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ld_iscon);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.ld_iscon);
         }
         else if(src.equals("Andhjan Mandal") && des.equals("Maninagar"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.andhjan_maninagar);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.andhjan_maninagar);
         }
         else if(src.equals("Andhjan Mandal") && des.equals("Shivranjani"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.andhjan_shivranjani);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.andhjan_shivranjani);
         }
         else if(src.equals("Andhjan Mandal") && des.equals("Nehrunagar"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.andhjan_nehrunagar);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.andhjan_nehrunagar);
         }
         else if(src.equals("Andhjan Mandal") && des.equals("L.D College"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.andhjan_ld);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.andhjan_ld);
         }
         else if(src.equals("Andhjan Mandal") && des.equals("Iskcon"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.andhjan_iscon);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.andhjan_iscon);
         }
         else if(src.equals("Iskcon") && des.equals("Maninagar"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.iscon_maninagar);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.iscon_maninagar);
         }
         else if(src.equals("Iskcon") && des.equals("Shivranjani"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.iscon_shivranjani);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.iscon_shivranjani);
         }
         else if(src.equals("Iskcon") && des.equals("Nehrunagar"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.iscon_nehrunagar);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.iscon_nehrunagar);
         }
         else if(src.equals("Iskcon") && des.equals("L.D College"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.iscon_ld);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.iscon_ld);
         }
         else if(src.equals("Iskcon") && des.equals("Andhjan Mandal"))
         {
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.iscon_andhjan);
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-            bytes = stream.toByteArray();
-            intent.putExtra("image", bytes);
-            startActivity(intent);
+            SetQR(R.drawable.iscon_andhjan);
         }
         else
         {
@@ -530,5 +369,110 @@ public class PlanJourney extends AppCompatActivity implements NavigationView.OnN
         TextView text = view.findViewById(android.R.id.message);
         text.setTextColor(Color.WHITE);
         toast.show();
+    }
+
+    private void SetQR(int id)
+    {
+        byte[] bytes;
+        Intent intent = new Intent(getApplicationContext(), ticketqr.class);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), id);
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        bytes = stream.toByteArray();
+        intent.putExtra("image", bytes);
+        startActivity(intent);
+    }
+
+    private void FilterList()
+    {
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Maninagar", "Shivranjani", "Maninagar - Shivranjani");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Maninagar", "Nehrunagar", "Maninagar - Nehrunagar");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Maninagar", "L.D College", "Maninagar - L.D. College");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Maninagar", "Andhjan Mandal", "Maninagar - Andhjan Mandal");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Maninagar", "Iskcon", "Maninagar - Iskcon");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Shivranjani", "Maninagar", "Shivranjani - Maninagar");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Shivranjani", "Nehrunagar", "Shivranjani - Nehrunagar");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Shivranjani", "L.D College", "Shivranjani - L.D. College");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Shivranjani", "Andhjan Mandal", "Shivranjani - Andhjan Mandal");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Shivranjani", "Iskcon", "Shivranjani - Iskcon");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Nehrunagar", "Maninagar", "Nehrunagar - Maninagar");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Nehrunagar", "Shivranjani", "Nehrunagar - Shivranjani");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Nehrunagar", "L.D College", "Nehrunagar - L.D. College");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Nehrunagar", "Andhjan Mandal", "Nehrunagar - Andhjan Mandal");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Nehrunagar", "Iskcon", "Nehrunagar - Iskcon");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "L.D College", "Maninagar", "L.D. College - Maninagar");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "L.D College", "Shivranjani", "L.D. College - Shivranjani");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "L.D College", "Nehrunagar", "L.D. College - Nehrunagar");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "L.D College", "Andhjan Mandal", "L.D. College - Andhjan Mandal");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "L.D College", "Iskcon", "L.D. College - Iskcon");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Andhjan Mandal", "Maninagar", "Andhjan Mandal - Maninagar");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Andhjan Mandal", "Shivranjani", "Andhjan Mandal - Shivranjani");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Andhjan Mandal", "Nehrunagar", "Andhjan Mandal - Nehrunagar");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Andhjan Mandal", "L.D College", "Andhjan Mandal - L.D. College");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Andhjan Mandal", "Iskcon", "Andhjan Mandal - Iskcon");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Iskcon", "Maninagar", "Iskcon - Maninagar");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Iskcon", "Shivranjani", "Iskcon - Shivranjani");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Iskcon", "Nehrunagar", "Iskcon - Nehrunagar");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Iskcon", "L.D College", "Iskcon - L.D. College");
+
+        busCardAdapter.FilterList(sourceSpinner.getSelectedItem().toString(), destinationSpinner.getSelectedItem().toString(),
+                "Iskcon", "Andhjan Mandal", "Iskcon - Andhjan Mandal");
     }
 }
