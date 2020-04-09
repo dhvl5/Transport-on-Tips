@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity_journeywologin">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/raleway_bold"
         android:text="SELECT YOUR JOURNEY"
         android:textSize="25sp"
@@ -17,6 +18,7 @@
         android:textColor="@color/colorPrimaryDark"/>
 
     <LinearLayout
+        android:id="@+id/ll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:weightSum="2"
@@ -26,7 +28,7 @@
     <Spinner
         android:layout_width="190dp"
         android:layout_height="50dp"
-        android:id="@+id/Src"
+        android:id="@+id/srcSkip"
         android:entries="@array/Src_Des"
         android:prompt="@string/Src"
         android:layout_marginTop="10dp"
@@ -35,12 +37,18 @@
     <Spinner
         android:layout_width="190dp"
         android:layout_height="50dp"
-        android:id="@+id/des"
+        android:id="@+id/desSkip"
         android:entries="@array/Src_Des"
         android:prompt="@string/Des"
         android:layout_marginTop="10dp"
        android:layout_marginLeft="10dp"
         android:background="@drawable/spinner"/>
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSkip"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll"/>
 
 </RelativeLayout>

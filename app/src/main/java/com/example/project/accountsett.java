@@ -3,6 +3,7 @@ package com.example.project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import android.provider.Settings;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -51,6 +53,8 @@ public class accountsett extends AppCompatActivity {
     @BindView(R.id.imageClick)
     ImageView imageViewProfilePic;
 
+    TextView profileName, profileEmail, profileMobile;
+
     SharedPreferences prefs;
     SharedPreferences.Editor editor;
 
@@ -59,8 +63,17 @@ public class accountsett extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accountsett);
 
+        profileName = findViewById(R.id.profileName);
+        profileEmail = findViewById(R.id.profileEmail);
+        profileMobile = findViewById(R.id.profileMobile);
+
         prefs = getSharedPreferences("image", MODE_PRIVATE);
         editor = prefs.edit();
+
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("UserLogin", Context.MODE_PRIVATE);
+        profileName.setText(sharedPreferences.getString("name", ""));
+        profileEmail.setText(sharedPreferences.getString("login", ""));
+        profileMobile.setText(sharedPreferences.getString("mobile", ""));
 
         setResult(RESULT_OK);
 

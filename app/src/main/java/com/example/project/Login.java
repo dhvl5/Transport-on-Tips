@@ -78,14 +78,17 @@ public class Login extends AppCompatActivity
                     {
                         Toast.makeText(getApplicationContext(), "Login Successfully!!", Toast.LENGTH_SHORT).show();
                         JSONObject data = jsonObject.getJSONObject("data");
+                        String name = data.getString("name");
                         String email = data.getString("email");
+                        String mobile = data.getString("mobile");
 
                         SharedPreferences.Editor editor;
                         SharedPreferences preferences;
-                        preferences = getApplicationContext().getSharedPreferences("UserLogin",
-                                Context.MODE_PRIVATE);
+                        preferences = getApplicationContext().getSharedPreferences("UserLogin", Context.MODE_PRIVATE);
                         editor = preferences.edit();
+                        editor.putString("name", name);
                         editor.putString("login", email);
+                        editor.putString("mobile", mobile);
                         editor.apply();
                         editor.commit();
 

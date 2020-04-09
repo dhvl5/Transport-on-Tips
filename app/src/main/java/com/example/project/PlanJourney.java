@@ -40,6 +40,8 @@ public class PlanJourney extends AppCompatActivity implements NavigationView.OnN
     BusCardAdapter busCardAdapter;
     ArrayList<BusCard> busCardList;
 
+    TextView headerName, headerEmail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -52,6 +54,15 @@ public class PlanJourney extends AppCompatActivity implements NavigationView.OnN
         materialToolbar = findViewById(R.id.toolbar);
         drawerLayout = findViewById(R.id.custom_drawer_layout);
         navigationView = findViewById(R.id.custom_navigation_view);
+
+        View headerView = navigationView.getHeaderView(0);
+        headerName = headerView.findViewById(R.id.headerName);
+        headerEmail = headerView.findViewById(R.id.headerEmail);
+
+        SharedPreferences preferences;
+        preferences = getApplicationContext().getSharedPreferences("UserLogin", Context.MODE_PRIVATE);
+        headerName.setText(preferences.getString("name", ""));
+        headerEmail.setText(preferences.getString("login", ""));
 
         setSupportActionBar(materialToolbar);
 
@@ -216,12 +227,21 @@ public class PlanJourney extends AppCompatActivity implements NavigationView.OnN
                 break;
             case R.id.nav_item_6:
                 drawerLayout.closeDrawer(navigationView);
-                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("UserLogin",
-                        Context.MODE_PRIVATE);
+
+                SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("UserLogin", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.remove("login");
+                editor.remove("name");
+                editor.remove("mobile");
                 editor.apply();
                 editor.commit();
+
+                SharedPreferences preferences = getApplicationContext().getSharedPreferences("MenuItemVisibility", Context.MODE_PRIVATE);
+                SharedPreferences.Editor edt = preferences.edit();
+                edt.remove("visible");
+                edt.apply();
+                edt.commit();
+
                 Intent i6 = new Intent(PlanJourney.this, Login.class);
                 startActivity(i6);
                 finish();
